@@ -7,6 +7,20 @@ resource "mongodbatlas_cluster" "cluster-atlas" {
   auto_scaling_disk_gb_enabled = true
   mongo_db_major_version       = var.mongo_db_major_version
   cluster_type                 = "REPLICASET"
+  
+  #Autoscaling sections
+  auto_scaling_compute_enabled = var.auto_scaling_compute_enabled
+  
+  # when the autoscaling compute enabled set to true, this var is initiated (default to M20). otherwise - null
+  provider_auto_scaling_compute_max_instance_size = var.auto_scaling_compute_enabled ? var.provider_auto_scaling_compute_max_instance_size : null 
+    
+  # when the autoscaling compute enabled set to true, this var is initiated (default to true). otherwise - null
+  auto_scaling_compute_scale_down_enabled = var.auto_scaling_compute_enabled ? var.auto_scaling_compute_scale_down_enabled : null
+
+  # when the autoscaling compute enabled set to true, this var is initiated (default to M10). otherwise - null
+  provider_auto_scaling_compute_min_instance_size = var.auto_scaling_compute_enabled ? var.provider_auto_scaling_compute_min_instance_size : null
+
+
   replication_specs {
     num_shards = 1
     regions_config {
