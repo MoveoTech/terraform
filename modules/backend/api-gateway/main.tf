@@ -76,12 +76,10 @@ resource "aws_api_gateway_deployment" "main" {
   rest_api_id = aws_api_gateway_rest_api.main.id
   depends_on  = [aws_api_gateway_integration.main]
 
-  variables = {
-    # just to trigger redeploy on resource changes
-    resources = join(", ", [aws_api_gateway_resource.main.id])
-
-    # note: redeployment might be required with other gateway changes.
-    # when necessary run `terraform taint <this resource's address>`
+  triggers = {
+    redeployment = sha1(jsonencode(aws_api_gateway_rest_api.main.body))
+    # this var, when true, will make the api gateway redeploy every Terraform Apply.
+    force_redeploy = var.force_redeploy ? timestamp() : null
   }
 
   lifecycle {

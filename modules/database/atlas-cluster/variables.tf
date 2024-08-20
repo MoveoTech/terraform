@@ -65,3 +65,27 @@ variable "atlas_project_id" {
   description = "The ID of your MongoDB Atlas project"
   type        = string
 }
+
+variable "auto_scaling_compute_enabled" {
+  description = "Enables auto-scaling UP for the atlas cluster's compute power"
+  type = bool
+  default = false
+}
+
+variable "provider_auto_scaling_compute_max_instance_size" {
+  description = "MAXIMUM Compute for autoscaling. Note - Need to set auto_scaling_compute_enabled to true. make sure this value is BIGGER than provider_auto_scaling_compute_min_instance_size"
+  type    = string
+  default = "M20"
+}
+
+variable "auto_scaling_compute_scale_down_enabled" {
+  description = "Enables auto-scaling DOWN for the atlas cluster's compute power"
+  type    = bool
+  default = true
+}
+
+variable "provider_auto_scaling_compute_min_instance_size" {
+  description = "MINIMUM Compute for autoscaling. Note - Need to set auto_scaling_compute_scale_down_enabled to true. make sure this value is SMALLER than provider_auto_scaling_compute_max_instance_size"
+  type    = string
+  default = "M10"
+}

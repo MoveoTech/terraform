@@ -20,7 +20,11 @@
 | <a name="input_mongo_db_major_version"></a> [mongo\_db\_major\_version](#input\_mongo\_db\_major\_version) | Version of the cluster to deploy. Atlas supports the following MongoDB versions for M10+ clusters: 4.2, 4.4, 5.0, or 6.0. | `string` | yes |
 | <a name="input_provider_instance_size_name"></a> [provider\_instance\_size\_name](#input\_provider\_instance\_size\_name) | Atlas provides different instance sizes, each with a default storage capacity and RAM size | `string` | yes |
 | <a name="input_region"></a> [region](#input\_region) | AWS region | `string` | yes |
+| <a name="input_auto_scaling_compute_enabled"></a> [auto\_scaling\_compute\_enabled](#input\_auto\_scaling\_compute\_enabled) | Enables auto-scaling UP for the atlas cluster's compute power | `bool` | no |
+| <a name="input_auto_scaling_compute_scale_down_enabled"></a> [auto\_scaling\_compute\_scale\_down\_enabled](#input\_auto\_scaling\_compute\_scale\_down\_enabled) | Enables auto-scaling DOWN for the atlas cluster's compute power | `bool` | no |
 | <a name="input_context"></a> [context](#input\_context) | Single object for setting entire context at once.<br>See description of individual variables for details.<br>Leave string and numeric variables as `null` to use default value.<br>Individual variable settings (non-null) override settings in context object,<br>except for attributes, tags, and additional\_tag\_map, which are merged. | `any` | no |
+| <a name="input_provider_auto_scaling_compute_max_instance_size"></a> [provider\_auto\_scaling\_compute\_max\_instance\_size](#input\_provider\_auto\_scaling\_compute\_max\_instance\_size) | MAXIMUM Compute for autoscaling. Note - Need to set auto\_scaling\_compute\_enabled to true. make sure this value is BIGGER than provider\_auto\_scaling\_compute\_min\_instance\_size | `string` | no |
+| <a name="input_provider_auto_scaling_compute_min_instance_size"></a> [provider\_auto\_scaling\_compute\_min\_instance\_size](#input\_provider\_auto\_scaling\_compute\_min\_instance\_size) | MINIMUM Compute for autoscaling. Note - Need to set auto\_scaling\_compute\_scale\_down\_enabled to true. make sure this value is SMALLER than provider\_auto\_scaling\_compute\_max\_instance\_size | `string` | no |
 
 ## Outputs
 
