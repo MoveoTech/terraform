@@ -182,3 +182,9 @@ variable "integration_request_parameters" {
     "integration.request.header.Content-Type" = "method.request.header.Content-Type"
   }
 }
+
+variable "force_redeploy" {
+  description = "When set to true, forces a redeployment of the api gateway on every apply. this is done by a timestamp"
+  type        = bool
+  default     = false
+}
