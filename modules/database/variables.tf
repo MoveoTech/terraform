@@ -144,3 +144,8 @@ variable "atlas_users" {
   description = "List of emails for all the developer who needs access to this organization project"
 }
 
+variable "disk_size_gb" {
+  type        = number
+  description = "The size in gigabytes of the disk for the cluster nodes"
+  default     = 10
+}
