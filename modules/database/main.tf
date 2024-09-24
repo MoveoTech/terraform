@@ -89,6 +89,7 @@ module "atlas_cluster" {
   depends_on                  = [module.atlas_vpc_endpoint]
   context                     = var.context
   mongo_db_major_version      = var.mongo_db_major_version
+  disk_size_gb                = var.disk_size_gb
 
 }
 

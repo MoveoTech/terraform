@@ -14,6 +14,11 @@ variable "mongo_db_major_version" {
   description = "Version of the cluster to deploy. Atlas supports the following MongoDB versions for M10+ clusters: 4.2, 4.4, 5.0, or 6.0."
 }
 
+variable "disk_size_gb" {
+  type        = number
+  description = "The size in gigabytes of the disk for the cluster nodes"
+}
+
 variable "context" {
   type = any
   default = {
