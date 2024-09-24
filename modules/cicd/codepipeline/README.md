@@ -29,7 +29,7 @@
 | <a name="input_repository_name"></a> [repository\_name](#input\_repository\_name) | Name of repository | `string` | yes |
 | <a name="input_s3_bucket_access_log_bucket_name"></a> [s3\_bucket\_access\_log\_bucket\_name](#input\_s3\_bucket\_access\_log\_bucket\_name) | Name of the S3 bucket where s3 access log will be sent to | `string` | yes |
 | <a name="input_cf_distribution_id"></a> [cf\_distribution\_id](#input\_cf\_distribution\_id) | Cloudfron distribution id | `string` | no |
-| <a name="input_context"></a> [context](#input\_context) | Single object for setting entire context at once.<br>See description of individual variables for details.<br>Leave string and numeric variables as `null` to use default value.<br>Individual variable settings (non-null) override settings in context object,<br>except for attributes, tags, and additional\_tag\_map, which are merged. | `any` | no |
+| <a name="input_context"></a> [context](#input\_context) | Single object for setting entire context at once.<br/>See description of individual variables for details.<br/>Leave string and numeric variables as `null` to use default value.<br/>Individual variable settings (non-null) override settings in context object,<br/>except for attributes, tags, and additional\_tag\_map, which are merged. | `any` | no |
 | <a name="input_kms_arn"></a> [kms\_arn](#input\_kms\_arn) | KMS key to encrypt artifact | `string` | no |
 | <a name="input_lambda_name"></a> [lambda\_name](#input\_lambda\_name) | Lambda function name for invalidate clodfront | `string` | no |
 | <a name="input_poll_for_source_changes"></a> [poll\_for\_source\_changes](#input\_poll\_for\_source\_changes) | if true, a pipeline execution will be triggered on every push | `bool` | no |

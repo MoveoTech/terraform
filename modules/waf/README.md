@@ -19,9 +19,9 @@
 |------|-------------|------|:--------:|
 | <a name="input_kms_key_arn"></a> [kms\_key\_arn](#input\_kms\_key\_arn) | The KMS arn key to encrtypt all logs | `string` | yes |
 | <a name="input_type"></a> [type](#input\_type) | This is for the cloud watch naming | `string` | yes |
-| <a name="input_association_resource_arns"></a> [association\_resource\_arns](#input\_association\_resource\_arns) | A list of ARNs of the resources to associate with the web ACL.<br>This must be an ARN of an Application Load Balancer or an Amazon API Gateway stage. | `list(string)` | no |
-| <a name="input_context"></a> [context](#input\_context) | Single object for setting entire context at once.<br>See description of individual variables for details.<br>Leave string and numeric variables as `null` to use default value.<br>Individual variable settings (non-null) override settings in context object,<br>except for attributes, tags, and additional\_tag\_map, which are merged. | `any` | no |
-| <a name="input_scope"></a> [scope](#input\_scope) | Specifies whether this is for an AWS CloudFront distribution or for a regional application.<br>Possible values are `CLOUDFRONT` or `REGIONAL`.<br>To work with CloudFront, you must also specify the region us-east-1 (N. Virginia) on the AWS provider. | `string` | no |
+| <a name="input_association_resource_arns"></a> [association\_resource\_arns](#input\_association\_resource\_arns) | A list of ARNs of the resources to associate with the web ACL.<br/>This must be an ARN of an Application Load Balancer or an Amazon API Gateway stage. | `list(string)` | no |
+| <a name="input_context"></a> [context](#input\_context) | Single object for setting entire context at once.<br/>See description of individual variables for details.<br/>Leave string and numeric variables as `null` to use default value.<br/>Individual variable settings (non-null) override settings in context object,<br/>except for attributes, tags, and additional\_tag\_map, which are merged. | `any` | no |
+| <a name="input_scope"></a> [scope](#input\_scope) | Specifies whether this is for an AWS CloudFront distribution or for a regional application.<br/>Possible values are `CLOUDFRONT` or `REGIONAL`.<br/>To work with CloudFront, you must also specify the region us-east-1 (N. Virginia) on the AWS provider. | `string` | no |
 
 ## Outputs
 
